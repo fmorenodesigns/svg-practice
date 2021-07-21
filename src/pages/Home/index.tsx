@@ -1,5 +1,6 @@
 import "./styles.scss";
 
+import ConfettiContainer from "../../components/Confetti";
 import Instruction from "../../components/Instruction";
 import Logo from "../../components/Logo";
 import PageLayout from "../../components/PageLayout";
@@ -14,7 +15,8 @@ export default function Home() {
 
   return (
     <PageLayout className="home">
-      <div onClick={onClick}>
+      <ConfettiContainer />
+      <div className="logo-container" onClick={onClick}>
         <Logo height={240} width={240} />
       </div>
       <div className="main-text">

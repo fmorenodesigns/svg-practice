@@ -2,17 +2,21 @@
   --animDelay: 1.5s;
   --animDuration: 1s;
 
-  .logo {
-    transition: transform 0.3s ease;
-    cursor: pointer;
+  .logo-container {
+    z-index: 2;
 
-    &:hover {
-      transform: scale(1.1);
-    }
+    .logo {
+      transition: transform 0.3s ease;
+      cursor: pointer;
 
-    &:active {
-      transition: none;
-      transform: scale(0.96);
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &:active {
+        transition: none;
+        transform: scale(0.96);
+      }
     }
   }
 
