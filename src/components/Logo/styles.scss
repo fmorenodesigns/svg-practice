@@ -2,12 +2,13 @@
   path {
     stroke-dasharray: 400;
     stroke-dashoffset: 400;
-    animation: drawLogoStroke 1.8s ease-in forwards,
+    fill-opacity: 0;
+    animation: drawLogoStroke 1.5s ease-in forwards,
       drawLogoFilling 0.6s ease forwards;
 
     @keyframes drawLogoFilling {
-      from {
-        fill-opacity: 0;
+      to {
+        fill-opacity: 1;
       }
     }
 
@@ -15,6 +16,12 @@
       to {
         stroke-dashoffset: 0;
       }
+    }
+  }
+
+  @for $i from 0 through 200 {
+    path:nth-of-type(#{$i + 1}) {
+      animation-delay: #{$i * 0.015}s;
     }
   }
 }
