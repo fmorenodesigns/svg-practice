@@ -1,0 +1,46 @@
+.home {
+  --animDelay: 1.5s;
+  --animDuration: 1s;
+
+  .logo {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transition: none;
+      transform: scale(1.2);
+    }
+  }
+
+  .main-text {
+    font-weight: 700;
+    text-align: center;
+
+    .first-line {
+      opacity: 0;
+      font-size: 93px;
+      animation: slideUp var(--animDuration) ease-out var(--animDelay),
+        fadeIn var(--animDuration) ease-out forwards var(--animDelay);
+    }
+
+    .second-line {
+      opacity: 0;
+      font-size: 35px;
+      margin-top: -15px;
+      animation: slideDown var(--animDuration) ease-out var(--animDelay),
+        fadeIn var(--animDuration) ease-out var(--animDelay) forwards;
+    }
+  }
+
+  .instruction {
+    --delay: calc(var(--animDelay) + var(--animDuration));
+
+    opacity: 0;
+    animation: slideDown var(--animDuration) ease-out var(--delay),
+      fadeIn var(--animDuration) ease-out var(--delay) forwards;
+  }
+}

@@ -1,0 +1,43 @@
+.chapter-layout {
+  .chapter-container {
+    text-align: center;
+
+    .chapter-text {
+      font-size: 14px;
+    }
+
+    .chapter-number {
+      font-family: "Josefin Slab", serif;
+      font-weight: 300;
+      font-size: 72px;
+      margin-top: 10px;
+    }
+  }
+
+  .buttons-container {
+    margin-top: 40px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    column-gap: 40px;
+    place-content: center;
+
+    .change-page-button {
+      padding-top: 3px;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--black);
+      background: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      box-shadow: 0 1px 0 0 solid var(--black);
+
+      &:hover,
+      &:active {
+        color: var(--offwhite);
+        background-color: var(--black);
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.image-container {
+  width: 100%;
+  display: grid;
+
+  svg {
+    margin-top: auto;
+    margin-bottom: 0;
+    max-height: 100%;
+    max-width: 100%;
+
+    * {
+      stroke-dasharray: 400;
+      stroke-dashoffset: 400;
+      fill-opacity: 0;
+      animation: drawChapterImageStroke 3s ease forwards,
+        drawChapterImageFill 0.5s ease forwards;
+
+      &:not(text) {
+        stroke: var(--black) !important;
+      }
+
+      @keyframes drawChapterImageStroke {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes drawChapterImageFill {
+        to {
+          fill-opacity: 1;
+        }
+      }
+    }
+
+    @for $i from 0 through 100 {
+      *:nth-child(#{$i + 1}) {
+        animation-delay: #{$i * 0.05}s;
+      }
+    }
+  }
+}
