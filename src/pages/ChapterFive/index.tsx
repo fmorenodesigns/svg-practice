@@ -6,8 +6,7 @@ export default function ChapterFive() {
     <ChapterLayout
       imageComponent={<ChapterImageFive />}
       chapterNumber={5}
-      forwardPath="./end"
-      backwardPath="./chapter-four"
+      isLastChapter
     />
   );
 }

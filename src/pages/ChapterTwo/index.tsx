@@ -7,8 +7,6 @@ export default function ChapterTwo() {
       imageComponent={<ChapterImageTwo />}
       imageWidth={240}
       chapterNumber={2}
-      forwardPath="./chapter-three"
-      backwardPath="./chapter-one"
     />
   );
 }

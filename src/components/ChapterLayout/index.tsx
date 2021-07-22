@@ -11,20 +11,30 @@ interface Props {
   imageComponent: React.ReactNode;
   imageWidth?: number;
   chapterNumber: number;
-  forwardPath?: string;
-  backwardPath?: string;
+  isLastChapter?: boolean;
 }
 
 export default function ChapterLayout({
   imageComponent,
   imageWidth,
   chapterNumber,
-  forwardPath,
-  backwardPath,
+  isLastChapter = false,
 }: Props) {
   const history = useHistory();
   const goToPage = (path: string) => {
     history.push(path);
+  };
+
+  const navigateBackwards = () => {
+    const targetPath = chapterNumber === 1 ? "./" : `./${chapterNumber - 1}`;
+
+    goToPage(targetPath);
+  };
+
+  const navigateForwards = () => {
+    const targetPath = isLastChapter ? "./end" : `./${chapterNumber + 1}`;
+
+    goToPage(targetPath);
   };
 
   return (
@@ -38,22 +48,12 @@ export default function ChapterLayout({
         width={imageWidth}
       />
       <div className="buttons-container">
-        {!!backwardPath && (
-          <button
-            className="change-page-button"
-            onClick={() => goToPage(backwardPath)}
-          >
-            <IconArrowNarrowLeft size={25} stroke={1} />
-          </button>
-        )}
-        {!!forwardPath && (
-          <button
-            className="change-page-button"
-            onClick={() => goToPage(forwardPath)}
-          >
-            <IconArrowNarrowRight size={25} stroke={1} />
-          </button>
-        )}
+        <button className="change-page-button" onClick={navigateBackwards}>
+          <IconArrowNarrowLeft size={25} stroke={1} />
+        </button>
+        <button className="change-page-button" onClick={navigateForwards}>
+          <IconArrowNarrowRight size={25} stroke={1} />
+        </button>
       </div>
     </PageLayout>
   );

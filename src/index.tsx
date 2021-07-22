@@ -20,19 +20,19 @@ ReactDOM.render(
         <Route exact path="/">
           <Home />
         </Route>
-        <Route exact path="/chapter-one">
+        <Route exact path="/1">
           <ChapterOne />
         </Route>
-        <Route exact path="/chapter-two">
+        <Route exact path="/2">
           <ChapterTwo />
         </Route>
-        <Route exact path="/chapter-three">
+        <Route exact path="/3">
           <ChapterThree />
         </Route>
-        <Route exact path="/chapter-four">
+        <Route exact path="/4">
           <ChapterFour />
         </Route>
-        <Route exact path="/chapter-five">
+        <Route exact path="/5">
           <ChapterFive />
         </Route>
         <Route exact path="/end">

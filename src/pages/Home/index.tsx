@@ -10,7 +10,7 @@ export default function Home() {
   const history = useHistory();
 
   const onClick = () => {
-    history.push("./chapter-one");
+    history.push("./1");
   };
 
   return (

@@ -3,11 +3,6 @@ import ChapterLayout from "../../components/ChapterLayout";
 
 export default function ChapterOne() {
   return (
-    <ChapterLayout
-      imageComponent={<ChapterImageOne />}
-      chapterNumber={1}
-      forwardPath="./chapter-two"
-      backwardPath="./"
-    />
+    <ChapterLayout imageComponent={<ChapterImageOne />} chapterNumber={1} />
   );
 }
