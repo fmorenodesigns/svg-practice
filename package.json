@@ -22,8 +22,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build:custom-domain": "echo fmoreno.me > ./build/CNAME",
-    "deploy": "npm run build && npm run build:custom-domain && gh-pages -d build",
+    "build:custom-domain": "echo am.fmoreno.me > ./build/CNAME",
+    "build:error-page": "cp ./build/index.html ./build/404.html",
+    "deploy": "npm run build && npm run build:custom-domain && npm run build:error-page && gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
